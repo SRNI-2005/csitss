@@ -3,266 +3,53 @@
 @tailwind components;
 @tailwind utilities;
 
-.heroHeader {
-  /* background-image: url("https://user-images.githubusercontent.com/100517925/197962701-b2c2b570-59db-45c9-8393-eec94d88abd7.jpg"); */
-  /* background-image: url('https://github.com/IEEE-RVCE/csitss/blob/master/public/mainGate.jpeg'), */
-  background-image: url('https://res.cloudinary.com/dmxwnn7mm/image/upload/v1689738072/mainGate_jyx5r7.jpg');
-  padding-top: 1px;
-  background-size: cover; /* Ensure the image covers the entire element */
-  background-position: center; /* Center the background image */
-  filter: brightness(110%); /* Adjust brightness to make it brighter */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+:root {
+  --primary-color: hsl(0, 0%, 93%);
+  --primary-hue: 0;
+  --primary-saturation: 0%;
+  --primary-lightness: 93%;
+  --secondary-color: hsl(216, 18%, 16%);
+  --action-color:		hsl(221, 83%, 53%);
 }
-.heroHeader:before {
-  position: absolute;
-  top: 0;
-  left: 0;
+* {
+  transition: color 0.3s linear, background-color 0.3s linear;
+}
+
+html, body{
+  padding: 0;
+  margin: 0;
+  background-color: var(--primary-color);
+}
+body.dark{
+  --primary-color: hsl(0, 0%, 7%);
+  --primary-hue: 0;
+  --primary-saturation: 0%;
+  --primary-lightness: 7%;
+  --secondary-color: hsl(216, 18%, 84%);
+}
+h1 {
   width: 100%;
-  height: 100%;
-  z-index: 1; /* Ensure overlay is above the background image */
-}
-
-@media (min-width: 768px) {
-  .heroHeader {
-    background-attachment: fixed; /* Add parallax effect */
-  }
-}
-.charge {
-  position: relative;
-  bottom: 0.5em;
-  font-size: 0.8em;
-}
-.bar {
-  /* width: 100%; */
-  padding: 2px 0;
-
-  /* background-color: #e74c3c; */
-  color: blue;
-
-  font-family: Gelasio;
-  font-size: 18px;
-}
-
-.bar_content {
-  display: block; /* Important to give the content a width */
-
-  /* width: 100%; */
-  transform: translateX(80%); /* Animation start out of the screen */
-
-  /* Add the animation */
-  animation: move 15s linear infinite
-    /* infinite make reapeat the animation indefinitely */;
-}
-
-/* Create the animation */
-@keyframes move {
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .bar {
-    display: none;
-  }
-}
-
-.marquee {
-  position: relative;
-  width: 100vw;
-  max-width: 100%;
-  height: 30px;
-  overflow-x: hidden;
-  margin-bottom: 20px;
-  display: block;
-  background-color: rgba(37, 104, 211, 0.879);
-}
-
-.track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 16s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.mantinedevcss-1trwvlz {
-  object-fit: inherit !important;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-/* Ensures proper container padding and visibility */
-.timeline-container {
-  padding: 2rem;
-  position: relative;
-  opacity: 0; /* Start with hidden state */
-  transform: translateY(20px); /* Start slightly below */
-  transition: opacity 1s ease-in, transform 1s ease-in; /* Smooth transition */
-}
-
-.timeline-title {
   font-size: 2rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #3b82f6, #1e3a8a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 2rem;
-  text-align: center;
+  line-height: 2.4rem;
+  letter-spacing: -0.01rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-.timeline-icon {
-  height: 32px;
-  width: 32px;
-  color: #4ade80;
+p {
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  letter-spacing: 0.01rem;
+  opacity: 0.9;
+  margin: 0.5rem;
 }
 
-.timeline-item {
-  margin: 1rem 0;
-}
-
-.timeline-item-title {
-  font-weight: 600;
-  font-size: 1.25rem;
-}
-
-.timeline-item-text {
-  color: #4b5563;
-}
-
-.fade-in {
-  opacity: 1; /* Visible state */
-  transform: translateY(0); /* Move to final position */
-}
-@keyframes fadeIn2 {
-  from {
-    opacity: 0;
+@media (max-width: 768px){
+  html {
+      font-size: 14px;
   }
-  to {
-    opacity: 1;
-  }
-}
-.content1 {
-  color: white;
-}
-.animate-fadeIn2 {
-  animation: fadeIn 2s ease-in-out;
-}
-@keyframes letterFocus {
-  0% {
-    transform: scale(1);
-    color: inherit;
-  }
-  50% {
-    transform: scale(1.5);
-    color: #ff6347; /* Highlight color */
-  }
-  100% {
-    transform: scale(1);
-    color: inherit;
-  }
-}
-
-.animated-date span {
-  display: inline-block;
-  animation: letterFocus 1s ease-in-out forwards;
-}
-
-.animated-date span:nth-child(1) {
-  animation-delay: 3s;
-}
-.animated-date span:nth-child(2) {
-  animation-delay: 3.1s;
-}
-.animated-date span:nth-child(3) {
-  animation-delay: 3.2s;
-}
-.animated-date span:nth-child(4) {
-  animation-delay: 3.3s;
-}
-.animated-date span:nth-child(5) {
-  animation-delay: 3.4s;
-}
-.animated-date span:nth-child(6) {
-  animation-delay: 3.5s;
-}
-.animated-date span:nth-child(7) {
-  animation-delay: 3.6s;
-}
-.animated-date span:nth-child(8) {
-  animation-delay: 3.7s;
-}
-.animated-date span:nth-child(9) {
-  animation-delay: 3.8s;
-}
-.animated-date span:nth-child(10) {
-  animation-delay: 3.9s;
-}
-.animated-date span:nth-child(11) {
-  animation-delay: 4s;
-}
-.animated-date span:nth-child(12) {
-  animation-delay: 4.1s;
-}
-.animated-date span:nth-child(13) {
-  animation-delay: 4.2s;
-}
-.animated-date span:nth-child(14) {
-  animation-delay: 4.3s;
-}
-.animated-date span:nth-child(15) {
-  animation-delay: 4.4s;
-}
-.animated-date span:nth-child(16) {
-  animation-delay: 4.5s;
-}
-.animated-date span:nth-child(17) {
-  animation-delay: 4.6s;
-}
-.animated-date span:nth-child(18) {
-  animation-delay: 4.7s;
-}
-.animated-date span:nth-child(19) {
-  animation-delay: 4.8s;
-}
-.animated-date span:nth-child(20) {
-  animation-delay: 4.9s;
-}
-.animated-date span:nth-child(21) {
-  animation-delay: 5s;
-}
-.animated-date span:nth-child(22) {
-  animation-delay: 5.1s;
-}
-.animated-date span:nth-child(23) {
-  animation-delay: 5.2s;
-}
-.download-button {
-  margin-top: 20px;
-}
-
-html {
-  scroll-behavior: smooth;
 }

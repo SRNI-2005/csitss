@@ -1,0 +1,45 @@
+.image-carousel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.image {
+  position: absolute;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  object-fit: cover;
+  margin: 0 20px;
+  border-radius: 0.5rem;
+}
+
+.image-carousel button {
+  position: absolute;
+  z-index: 10;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.image-carousel button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.image-carousel button:first-of-type {
+  left: 15px;
+}
+
+.image-carousel button:last-of-type {
+  right: 15px;
+}
